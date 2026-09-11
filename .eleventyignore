@@ -2,3 +2,31 @@ README.md
 node_modules
 _site
 .vercel
+
+# ── ⚠️ THE PLATFORM'S OWN FILES ARE NOT WEBSITE CONTENT ─────────────────────
+#
+# Eleventy's input directory is the repository root (see eleventy.config.js), and it publishes
+# EVERY template-format file it finds under it — .md included. Nothing here was marked as a
+# page, and that is the point: a .md file needs no front matter and no link to become a live
+# URL, so anything dropped in this repo is published by default.
+#
+# That put 14 internal documents on the public web, all of them listed in sitemap.xml, all
+# returning 200:
+#
+#   /lib/strategist-prompt/          the system prompt the assistant runs on (36KB)
+#   /lib/onboarding-interview/       the onboarding script and the memory-layer design
+#   /platform-kb/*  (12 pages)       Earned Media's own research and method notes
+#
+# ⚠️ IGNORED, NOT DELETED, AND THE DISTINCTION MATTERS. These files are read at build time by
+# nothing, but scripts/ingest-platform-kb.js reads platform-kb/ straight off disk and lib/
+# holds real code. `.eleventyignore` removes them from the OUTPUT only; every script that
+# depends on them is unaffected.
+#
+# ⚠️ AND REMOVING THE PAGES IS ONLY HALF OF IT. The 14 URLs are already indexed, and a page
+# that stops being generated is a page that 404s — which Google honours eventually, on its own
+# schedule. Getting them out of results now needs a per-URL removal in Search Console for
+# mrpaint.com.au, and the removal only sticks while the URL keeps answering 404 or 410.
+#
+# ⚠️ DO NOT ADD `blog`. Those 33 .md files are the real content and are meant to be published.
+lib
+platform-kb
