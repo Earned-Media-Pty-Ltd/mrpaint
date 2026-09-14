@@ -290,21 +290,21 @@ canonical: /painter-trinity-beach/
   </div>
 </section>
 
-{# ─── FAQ ─── #}
+{# ─── FAQ ─── #}{% set place = locations | findBy("slug","trinity-beach") %}{% set pageFaqs = (place.faqs if place else []) or [] %}{% if pageFaqs | length %}
 <section class="faq-block">
   <div class="wrap-narrow">
     <div class="sec-head">
       <span class="eyebrow">Common Questions</span>
       <h2>Painting in Trinity Beach — FAQs</h2>
     </div>
-    <div class="faq-list">{% set place = locations | findBy("slug","trinity-beach") %}{% for f in (place.faqs if place else []) %}
+    <div class="faq-list">{% for f in pageFaqs %}
       <details{% if loop.first %} open{% endif %}>
         <summary>{{ f.q }} <span class="plus">+</span></summary>
         <div>{{ f.a }}</div>
       </details>{% endfor %}
     </div>
   </div>
-</section>
+</section>{% endif %}
 
 {# ─── SCHEMA: LocalBusiness with areaServed ─── #}
 <script type="application/ld+json">
@@ -363,16 +363,18 @@ canonical: /painter-trinity-beach/
 }
 </script>
 
-{# FAQ schema #}
+{# FAQ schema — generated from the same list the page renders.
+   It used to be a second, hand-maintained copy holding 4 of the 6 questions with
+   shortened answers. Once the visible list came from _data, editing a question would
+   have changed the page and left this saying something else. #}{% if pageFaqs | length %}
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@type": "FAQPage",
   "mainEntity": [
-    { "@type": "Question", "name": "How often should I repaint my Trinity Beach exterior?", "acceptedAnswer": { "@type": "Answer", "text": "Most Trinity Beach exteriors need a proper repaint every 5 to 7 years. Salt mist and wet-season humidity break down cheaper coatings faster than inland." } },
-    { "@type": "Question", "name": "What's the best exterior paint for a coastal Cairns home?", "acceptedAnswer": { "@type": "Answer", "text": "Dulux Weathershield and Solver Aquashield on render and masonry; Sikkens on timber. Prep matters more than paint choice." } },
-    { "@type": "Question", "name": "Are you fully insured and licensed?", "acceptedAnswer": { "@type": "Answer", "text": "Yes — fully insured, licensed, and trade-qualified." } },
-    { "@type": "Question", "name": "Do you charge for quotes?", "acceptedAnswer": { "@type": "Answer", "text": "No. Site visit and quote are free, and the quoted price is fixed." } }
+{%- for f in pageFaqs %}
+    { "@type": "Question", "name": {{ (f.q or "") | dump | safe }}, "acceptedAnswer": { "@type": "Answer", "text": {{ (f.a or "") | dump | safe }} } }{% if not loop.last %},{% endif %}
+{%- endfor %}
   ]
 }
-</script>
+</script>{% endif %}

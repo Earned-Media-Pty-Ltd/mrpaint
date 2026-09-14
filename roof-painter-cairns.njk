@@ -190,21 +190,21 @@ canonical: /roof-painter-cairns/
   </div>
 </section>
 
-{# ─── FAQ ─── #}
+{# ─── FAQ ─── #}{% set svc = services | findBy("slug","roof-painter-cairns") %}{% set pageFaqs = (svc.faqs if svc else []) or [] %}{% if pageFaqs | length %}
 <section class="faq-block" style="background:var(--bg-soft)">
   <div class="wrap-narrow">
     <div class="sec-head">
       <span class="eyebrow">Have questions?</span>
       <h2>FAQs related to hiring a roof painter in Cairns</h2>
     </div>
-    <div class="faq-list">{% set svc = services | findBy("slug","roof-painter-cairns") %}{% for f in (svc.faqs if svc else []) %}
+    <div class="faq-list">{% for f in pageFaqs %}
       <details>
         <summary>{{ f.q }} <span class="plus">+</span></summary>
         <div>{{ f.a }}</div>
       </details>{% endfor %}
     </div>
   </div>
-</section>
+</section>{% endif %}
 
 {# ─── CTA ─── #}
 <section class="cta">

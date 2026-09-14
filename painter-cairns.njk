@@ -382,21 +382,21 @@ canonical: /painter-cairns/
   </div>
 </section>
 
-{# ─── FAQ ─── #}
+{# ─── FAQ ─── #}{% set place = locations | findBy("slug","cairns-cbd") %}{% set pageFaqs = (place.faqs if place else []) or [] %}{% if pageFaqs | length %}
 <section class="faq-block">
   <div class="wrap-narrow">
     <div class="sec-head">
       <span class="eyebrow">Common Questions</span>
       <h2>FAQs related to hiring a painter in Cairns</h2>
     </div>
-    <div class="faq-list">{% set place = locations | findBy("slug","cairns-cbd") %}{% for f in (place.faqs if place else []) %}
+    <div class="faq-list">{% for f in pageFaqs %}
       <details{% if loop.first %} open{% endif %}>
         <summary>{{ f.q }} <span class="plus">+</span></summary>
         <div>{{ f.a }}</div>
       </details>{% endfor %}
     </div>
   </div>
-</section>
+</section>{% endif %}
 
 {# ─── CTA + LOCATION CHIPS ─── #}
 <section style="background: var(--bg-soft); padding: clamp(48px,6vw,80px) 0">

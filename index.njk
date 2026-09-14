@@ -257,21 +257,21 @@ canonical: /
   </div>
 </section>
 
-{# ─── FAQ ─── #}
+{# ─── FAQ ─── #}{% set pageFaqs = faq or [] %}{% if pageFaqs | length %}
 <section class="faq-block">
   <div class="wrap-narrow">
     <div class="sec-head">
       <span class="eyebrow">Have questions?</span>
       <h2>FAQs related to hiring a painter in Cairns</h2>
     </div>
-    <div class="faq-list">{% for f in faq %}
+    <div class="faq-list">{% for f in pageFaqs %}
       <details{% if loop.first %} open{% endif %}>
         <summary>{{ f.q }} <span class="plus">+</span></summary>
         <div>{{ f.a }}</div>
       </details>{% endfor %}
     </div>
   </div>
-</section>
+</section>{% endif %}
 
 {# ─── PROJECTS GRID ─── #}
 <section class="projects-block" style="background:var(--bg-soft)">
