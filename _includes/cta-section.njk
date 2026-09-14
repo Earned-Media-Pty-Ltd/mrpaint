@@ -1,0 +1,60 @@
+{#
+  The closing call-to-action, once.
+
+  ⚠️ THIS FIXES A REAL LAYOUT BUG, it is not only de-duplication. `.cta .grid` in
+  assets/css/style.css declares TWO columns — grid-template-columns: 1.1fr 1fr — and
+  about-us.njk fills both: copy on the left, a white card on the right. The roof and
+  services pages were only ever given the left child, so the right column rendered
+  empty. Measured in a browser at 1440px: a 1104px grid, 548px of content, 498px of
+  nothing. Roughly 45% of the section was dead space on both pages.
+
+  The card here holds the phone, the email and the button — all of which were already
+  on those pages, crammed under the copy in the left column. Nothing new is written;
+  it moves into the column the layout was always expecting.
+
+  ⚠️ THE BUTTON CARRIES NO MARGIN OF ITS OWN. `.qform` is `display:grid; gap:14px`, so
+  spacing comes from the grid. The original markup had an inline margin-top:28px from
+  when this sat in a plain column, and keeping it would double up.
+
+  ⚠️ AND THE CARD OVERRIDES ITS OWN BACKGROUND, which is not a flourish. `.qform`
+  defaults to var(--bg-soft) and the whole `.cta` section is already that colour, so
+  without the override the card is invisible against it. about-us.njk does the same
+  thing for the same reason.
+
+  ⚠️ IMPORT IT `with context`, OR THE PHONE AND EMAIL COME OUT EMPTY. An imported
+  Nunjucks macro cannot see the calling template's globals, so `site.phone_link` inside
+  this card resolves to nothing — and it fails silently, rendering <a href=""></a>: a
+  contact card with a dead phone link and no number in it. The first build after this
+  was written did exactly that, and the markup still looked right.
+
+  Usage — ledes is a list, so a page with two paragraphs needs no second call:
+    {% from "cta-section.njk" import ctaSection with context %}
+    {{ ctaSection("Free, no-obligation", "Not sure which service\nyou need? Just ask.",
+                  ["Tell us what you are looking at…"], "Get a free quote") }}
+#}
+{% macro ctaSection(eyebrow, headingText, ledes, buttonLabel) -%}
+<section class="cta">
+  <div class="wrap">
+    <div class="grid">
+      <div>
+        {%- if eyebrow %}
+        <span class="eyebrow">{{ eyebrow }}</span>
+        {%- endif %}
+        {%- if headingText %}
+        <h2>{{ headingText | heading | safe }}</h2>
+        {%- endif %}
+        {%- for p in ledes %}
+        <p class="lede">{{ p }}</p>
+        {%- endfor %}
+      </div>
+      <div class="qform" style="background:#fff;border-color:rgba(22,20,19,.18)">
+        <div class="contact-list">
+          <div class="row"><span class="lbl">Phone</span><a href="{{ site.phone_link }}">{{ site.phone_display }}</a></div>
+          <div class="row"><span class="lbl">Email</span><a href="mailto:{{ site.email }}">{{ site.email }}</a></div>
+        </div>
+        <div><a class="btn btn--yellow btn--lg" href="/contact-us/">{{ buttonLabel }} <span class="arr">&rarr;</span></a></div>
+      </div>
+    </div>
+  </div>
+</section>
+{%- endmacro %}

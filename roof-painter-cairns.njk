@@ -5,7 +5,7 @@ description: MrPaint is a local roof painting, family-run company servicing Cair
 permalink: /roof-painter-cairns/
 canonical: /roof-painter-cairns/
 ---
-{% from "page-hero.njk" import pageHero %}{% from "faq-section.njk" import faqSection %}
+{% from "cta-section.njk" import ctaSection with context %}{% from "page-hero.njk" import pageHero %}{% from "faq-section.njk" import faqSection %}
 <style>
 .page-hero{ padding: clamp(48px,7vw,90px) 0 clamp(28px,4vw,56px); position:relative; overflow:hidden }
 .page-hero::before{ content:""; position:absolute; right:-160px; top:-100px; width:480px; height:480px; border-radius:50%; background:var(--yellow); opacity:.5; z-index:0 }
@@ -177,20 +177,4 @@ canonical: /roof-painter-cairns/
 {# ─── FAQ ─── #}{% set pageFaqs = (svc.faqs if svc else []) or [] %}{{ faqSection(pageFaqs, "Have questions?", "FAQs related to hiring a roof painter in Cairns", "background:var(--bg-soft)", false) }}
 
 {# ─── CTA ─── #}
-<section class="cta">
-  <div class="wrap">
-    <div class="grid">
-      <div>
-        <span class="eyebrow">MrPaint provide leading painting services across the Cairns Area</span>
-        {% if svc.blocks.cta_h %}<h2>{{ svc.blocks.cta_h | heading | safe }}</h2>{% endif %}
-        {% set sty = [" class=\"lede\""] %}{% for p in svc.blocks.cta_paras %}<p{{ (sty[loop.index0] or (sty | last)) | safe }}>{{ p }}</p>{% if not loop.last %}
-        {% endif %}{% endfor %}
-        <div class="contact-list">
-          <div class="row"><span class="lbl">Phone</span><a href="{{ site.phone_link }}">{{ site.phone_display }}</a></div>
-          <div class="row"><span class="lbl">Email</span><a href="mailto:{{ site.email }}">{{ site.email }}</a></div>
-        </div>
-        <div style="margin-top:28px"><a class="btn btn--yellow btn--lg" href="/contact-us/">Get in touch now <span class="arr">→</span></a></div>
-      </div>
-    </div>
-  </div>
-</section>
+{{ ctaSection("MrPaint provide leading painting services across the Cairns Area", svc.blocks.cta_h, svc.blocks.cta_paras, "Get in touch now") }}
