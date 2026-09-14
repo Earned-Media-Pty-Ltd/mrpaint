@@ -56,7 +56,7 @@ eleventyComputed:
 <section class="copy-block">
   <div class="wrap-narrow">
     <h2 class="sec-head">What we paint in {{ area.name }}</h2>
-    <p>{{ area.common_jobs }}</p>
+    <p>{{ area.common_jobs | commaList }}</p>
     <p style="margin-top:14px">MrPaint has been painting in the Cairns region since {{ site.founded }}. Whether it's a one-room touch-up, a full exterior repaint, or commercial work in {{ area.name }}, we'll come out and give you a free quote with no obligation. Honest pricing, neat work, and a tidy job site when we leave.</p>
 
     <h3 class="subhead">Our {{ area.name }} painting services include:</h3>
@@ -125,11 +125,11 @@ eleventyComputed:
   </div>
 </section>
 
-{# ─── SCHEMA: area-specific PaintingService with areaServed ─── #}
+{# ─── SCHEMA: area-specific HousePainter with areaServed ─── #}
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": "PaintingService",
+  "@type": "HousePainter",
   "name": "{{ site.name }} — Painter {{ area.name }}",
   "url": "{{ site.url }}/areas/{{ area.slug }}/",
   "telephone": "{{ site.phone }}",
