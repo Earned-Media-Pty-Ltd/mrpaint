@@ -5,7 +5,7 @@ description: Industrial painting in Cairns. Two-pack systems, epoxy floors, fact
 permalink: /industrial-painting/
 canonical: /industrial-painting/
 ---
-
+{% from "page-hero.njk" import pageHero %}
 <style>
 .page-hero{ padding: clamp(48px,7vw,90px) 0 clamp(28px,4vw,56px); position:relative; overflow:hidden }
 .page-hero::before{ content:""; position:absolute; right:-160px; top:-100px; width:480px; height:480px; border-radius:50%; background:var(--yellow); opacity:.5; z-index:0 }
@@ -50,19 +50,9 @@ canonical: /industrial-painting/
 @media (max-width: 860px){ .lm-grid{ grid-template-columns: 1fr } }
 </style>{% set svc = services | findBy("slug","industrial-painting") %}
 
-<section class="page-hero">
-  <div class="wrap">
-    <span class="eyebrow">Industrial painting · Cairns &amp; FNQ</span>
-    <h1 style="margin-top:14px">Two-pack systems<br/>that <span class="high">hold up</span> to real work.</h1>
-    {% if svc.intro %}<p class="lede" style="margin-top:24px;max-width:62ch">
-      {{ svc.intro }}
-    </p>{% endif %}
-    <div style="margin-top:28px;display:flex;gap:12px;flex-wrap:wrap">
+{% call pageHero(svc.hero_eyebrow, svc.h1, svc.intro) %}
       <a class="btn btn--yellow btn--lg" href="/contact-us/">Quote an industrial job <span class="arr">→</span></a>
-      <a class="btn btn--ghost btn--lg" href="#systems">See coating systems</a>
-    </div>
-  </div>
-</section>
+      <a class="btn btn--ghost btn--lg" href="#systems">See coating systems</a>{% endcall %}
 
 <div class="trust" aria-hidden="true">
   <div class="track">

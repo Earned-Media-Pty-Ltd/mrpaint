@@ -1,0 +1,50 @@
+{#
+  The hero at the top of a service-style page, once.
+
+  It was written out four times — commercial-painter-cairns.njk,
+  industrial-painting.njk, roof-painter-cairns.njk and services.njk — the same
+  eleven lines each, varying only in the words and the two buttons.
+
+  ⚠️ WORDS ARE DATA, LINKS ARE STRUCTURE. The eyebrow, the heading and the lede come
+  from the page's content row, because those are the things a business actually wants
+  to change. The buttons do not: their targets are navigation, one of them is an
+  in-page anchor and another is built from site.phone_link, and none of that belongs in
+  a content row. They are passed in as a block instead, so each page keeps its own
+  pair without this file knowing anything about them.
+
+  ⚠️ THE HEADING GOES THROUGH `heading`, WHICH IS WHY IT CAN BE STORED AT ALL. These
+  h1s carry a line break and a highlighted phrase. See the filter in eleventy.config.js
+  — a stored heading is text, a line break becomes a break, and a phrase in double
+  square brackets becomes the highlight. Escaping happens first, so no stored value can
+  produce any other tag. `safe` here is applied to output the filter has already
+  escaped; it is not a shortcut past escaping.
+
+  ⚠️ EACH PIECE IS GUARDED SEPARATELY. A missing lede must leave no empty paragraph
+  behind, which is the defect this page had before.
+
+  Usage — note the block form, which supplies the buttons:
+    {% from "page-hero.njk" import pageHero %}
+    {% call pageHero(svc.hero_eyebrow, svc.h1, svc.intro) %}
+      <a class="btn btn--yellow btn--lg" href="/contact-us/">Get a quote</a>
+    {% endcall %}
+#}
+{% macro pageHero(eyebrow, h1, lede) -%}
+<section class="page-hero">
+  <div class="wrap">
+    {%- if eyebrow %}
+    <span class="eyebrow">{{ eyebrow }}</span>
+    {%- endif %}
+    {%- if h1 %}
+    <h1 style="margin-top:14px">{{ h1 | heading | safe }}</h1>
+    {%- endif %}
+    {%- if lede %}
+    <p class="lede" style="margin-top:24px;max-width:62ch">
+      {{ lede }}
+    </p>
+    {%- endif %}
+    <div style="margin-top:28px;display:flex;gap:12px;flex-wrap:wrap">
+      {{- caller() }}
+    </div>
+  </div>
+</section>
+{%- endmacro %}

@@ -5,7 +5,7 @@ description: Every painting service MrPaint offers in Cairns — residential, co
 permalink: /services/
 canonical: /services/
 ---
-
+{% from "page-hero.njk" import pageHero %}
 <style>
 .page-hero{ padding: clamp(48px,7vw,90px) 0 clamp(28px,4vw,56px); position:relative; overflow:hidden }
 .page-hero::before{ content:""; position:absolute; right:-160px; top:-100px; width:480px; height:480px; border-radius:50%; background:var(--yellow); opacity:.5; z-index:0 }
@@ -41,19 +41,10 @@ canonical: /services/
 .area-chips a.hub{ background:var(--yellow); border-color:var(--yellow); color:var(--ink); font-weight:700 }
 </style>
 
-<section class="page-hero">
-  <div class="wrap">
-    <span class="eyebrow">Painting services · Cairns</span>
-    <h1 style="margin-top:14px">From residential to commercial,<br/><span class="high">we have you covered</span></h1>
-    <p class="lede" style="margin-top:24px;max-width:62ch">
-      MrPaint provides a comprehensive range of painting services across Cairns and surrounds — from small interior touch-ups to commercial fit-outs, industrial coatings and full roof restorations.
-    </p>
-    <div style="margin-top:28px;display:flex;gap:12px;flex-wrap:wrap">
+{% call pageHero("Painting services · Cairns", "From residential to commercial,
+[[we have you covered]]", "MrPaint provides a comprehensive range of painting services across Cairns and surrounds — from small interior touch-ups to commercial fit-outs, industrial coatings and full roof restorations.") %}
       <a class="btn btn--yellow btn--lg" href="/contact-us/">Get a free quote <span class="arr">→</span></a>
-      <a class="btn btn--ghost btn--lg" href="{{ site.phone_link }}">📞 {{ site.phone_display }}</a>
-    </div>
-  </div>
-</section>
+      <a class="btn btn--ghost btn--lg" href="{{ site.phone_link }}">📞 {{ site.phone_display }}</a>{% endcall %}
 
 <div class="trust" aria-hidden="true">
   <div class="track">

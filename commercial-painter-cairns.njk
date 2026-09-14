@@ -5,7 +5,7 @@ description: Commercial painters in Cairns for shopfronts, offices, strata, hosp
 permalink: /commercial-painter-cairns/
 canonical: /commercial-painter-cairns/
 ---
-
+{% from "page-hero.njk" import pageHero %}
 <style>
 .page-hero{ padding: clamp(48px,7vw,90px) 0 clamp(28px,4vw,56px); position:relative; overflow:hidden }
 .page-hero::before{ content:""; position:absolute; right:-160px; top:-100px; width:480px; height:480px; border-radius:50%; background:var(--yellow); opacity:.5; z-index:0 }
@@ -35,21 +35,11 @@ canonical: /commercial-painter-cairns/
 .includes-img{ aspect-ratio: 1/1; border-radius: var(--radius-l); overflow:hidden; border:1px solid var(--rule) }
 .includes-img img{ width:100%; height:100%; object-fit:cover }
 @media (max-width: 860px){ .includes-grid{ grid-template-columns: 1fr } .includes-list{ grid-template-columns: 1fr } }
-</style>
+</style>{% set svc = services | findBy("slug","commercial-painter-cairns") %}
 
-<section class="page-hero">
-  <div class="wrap">
-    <span class="eyebrow">Commercial painting · Cairns</span>
-    <h1 style="margin-top:14px">A commercial painter<br/>your <span class="high">doors stay open</span> for.</h1>
-    <p class="lede" style="margin-top:24px;max-width:62ch">
-      Shopfronts, offices, hospitality, strata, industrial. Project-managed properly so your business keeps trading through the job. After-hours and weekend work standard.
-    </p>
-    <div style="margin-top:28px;display:flex;gap:12px;flex-wrap:wrap">
+{% call pageHero(svc.hero_eyebrow, svc.h1, svc.intro) %}
       <a class="btn btn--yellow btn--lg" href="/contact-us/">Quote a commercial job <span class="arr">→</span></a>
-      <a class="btn btn--ghost btn--lg" href="/gallery/">See commercial work</a>
-    </div>
-  </div>
-</section>
+      <a class="btn btn--ghost btn--lg" href="/gallery/">See commercial work</a>{% endcall %}
 
 <div class="trust" aria-hidden="true">
   <div class="track">

@@ -4,19 +4,20 @@
     "url_alias": "/commercial-painter-cairns/",
     "title": "Commercial Painting",
     "nav_title": "Commercial",
-    "h1": "A commercial painter your doors stay open for.",
+    "h1": "A commercial painter\nyour [[doors stay open]] for.",
     "summary": "Commercial painters in Cairns for shopfronts, offices, strata, hospitality and industrial. Free quotes and after-hours work to keep your doors open.",
     "intro": "Shopfronts, offices, hospitality, strata, industrial. Project-managed properly so your business keeps trading through the job. After-hours and weekend work standard.",
     "trust_line": "After-hours and weekend work standard.",
     "sections": [],
-    "faqs": []
+    "faqs": [],
+    "hero_eyebrow": "Commercial painting · Cairns"
   },
   {
     "slug": "industrial-painting",
     "url_alias": "/industrial-painting/",
     "title": "Industrial Painting",
     "nav_title": "Industrial",
-    "h1": "Two-pack systems that hold up to real work.",
+    "h1": "Two-pack systems\nthat [[hold up]] to real work.",
     "summary": "Industrial painting in Cairns. Two-pack systems, epoxy floors, factory roofs, warehouses, plant rooms and line-marking. Get a free quote.",
     "intro": "Factory floors, warehouses, plant rooms, workshop roofs. Hot-galv primers, two-pack epoxies, line-marking and a crew that won't blink at heights.",
     "trust_line": "Spray equipment, specialised coatings and a team trained in industrial finishes.",
@@ -77,14 +78,15 @@
       "specs_close": "We pick the system based on what the steel, concrete or roof actually needs — UV, immersion, abrasion, cyclone. Industrial-grade products only, and we tell you the spec on the quote in writing.",
       "line_marking_lede": "Acrylic for carparks, 2-pack for warehouses, hot-melt for traffic surfaces. Safety colours and durable line marking that stand up to real traffic.",
       "cta_lede": "We don't quote industrial blind. Send us the basics and we'll come past, walk the site, take notes and come back with a proper spec."
-    }
+    },
+    "hero_eyebrow": "Industrial painting · Cairns & FNQ"
   },
   {
     "slug": "roof-painter-cairns",
     "url_alias": "/roof-painter-cairns/",
     "title": "Roof Painting",
     "nav_title": "Roof",
-    "h1": "Roof Painter Cairns & Surrounds",
+    "h1": "Roof Painter\n[[Cairns & Surrounds]]",
     "summary": "MrPaint is a local roof painting, family-run company servicing Cairns. Terracotta, concrete and metal roofs, gutters and downpipes. Get in touch with our friendly team.",
     "intro": "Looking for a painting company in Cairns that offers affordable roof painting services? Our team of experienced professionals are experts in painting roofs and will work diligently to ensure your project is completed to the highest standards.",
     "sections": [],
@@ -105,6 +107,7 @@
         "q": "Can you help with lead paint removal?",
         "a": "Yes — our experienced team can handle lead paint removal and then re-paint with your choice of colours in a more health and environmentally friendly paint choice."
       }
-    ]
+    ],
+    "hero_eyebrow": "Roof Painting Cairns"
   }
 ]
