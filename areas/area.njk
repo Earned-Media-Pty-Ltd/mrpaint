@@ -125,7 +125,10 @@ eleventyComputed:
   </div>
 </section>
 
-{# ─── SCHEMA: area-specific HousePainter with areaServed ─── #}
+{# ─── SCHEMA: area-specific HousePainter with areaServed ───
+     lat/lng are printed unquoted, so an area with neither would emit
+     "latitude": , and invalidate this whole block — Google would then discard the
+     business name, phone and address along with it. Omitted rather than guessed. #}
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -151,12 +154,12 @@ eleventyComputed:
       "addressRegion": "QLD",
       "postalCode": "{{ area.postcode }}",
       "addressCountry": "AU"
-    },
+    }{% if area.lat and area.lng %},
     "geo": {
       "@type": "GeoCoordinates",
       "latitude": {{ area.lat }},
       "longitude": {{ area.lng }}
-    }
+    }{% endif %}
   },
   "openingHours": "Mo-Sa 07:00-17:00"
 }
