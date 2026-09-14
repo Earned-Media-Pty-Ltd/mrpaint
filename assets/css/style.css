@@ -626,15 +626,6 @@ footer.site-ft{
 .cta .contact-list{ margin-top:24px; display:flex; flex-direction:column; gap:0 }
 @media (max-width:860px){ .cta .grid{ grid-template-columns: 1fr } }
 
-/* A CTA with no second column of its own — copy and contact card stacked down the
-   middle instead of a two-column grid with one half empty. about-us.njk fills both
-   columns and keeps the default; this variant is for the pages that never had a
-   second child. */
-.cta--stacked .grid{ grid-template-columns: min(720px, 100%); justify-content:center; text-align:center }
-.cta--stacked .qform{ max-width:460px; width:100%; justify-self:center; text-align:center }
-.cta--stacked .contact-list{ margin-top:0 }
-.cta--stacked .contact-list .row{ align-items:center }
-
 /* qform — light card form used in CTA blocks */
 .qform{
   background:var(--bg-soft); border:1px solid var(--rule); border-radius: var(--radius-l);
