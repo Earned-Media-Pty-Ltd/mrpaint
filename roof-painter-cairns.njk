@@ -5,7 +5,7 @@ description: MrPaint is a local roof painting, family-run company servicing Cair
 permalink: /roof-painter-cairns/
 canonical: /roof-painter-cairns/
 ---
-
+{% from "faq-section.njk" import faqSection %}
 <style>
 .page-hero{ padding: clamp(48px,7vw,90px) 0 clamp(28px,4vw,56px); position:relative; overflow:hidden }
 .page-hero::before{ content:""; position:absolute; right:-160px; top:-100px; width:480px; height:480px; border-radius:50%; background:var(--yellow); opacity:.5; z-index:0 }
@@ -190,21 +190,7 @@ canonical: /roof-painter-cairns/
   </div>
 </section>
 
-{# ─── FAQ ─── #}{% set svc = services | findBy("slug","roof-painter-cairns") %}{% set pageFaqs = (svc.faqs if svc else []) or [] %}{% if pageFaqs | length %}
-<section class="faq-block" style="background:var(--bg-soft)">
-  <div class="wrap-narrow">
-    <div class="sec-head">
-      <span class="eyebrow">Have questions?</span>
-      <h2>FAQs related to hiring a roof painter in Cairns</h2>
-    </div>
-    <div class="faq-list">{% for f in pageFaqs %}
-      <details>
-        <summary>{{ f.q }} <span class="plus">+</span></summary>
-        <div>{{ f.a }}</div>
-      </details>{% endfor %}
-    </div>
-  </div>
-</section>{% endif %}
+{# ─── FAQ ─── #}{% set svc = services | findBy("slug","roof-painter-cairns") %}{% set pageFaqs = (svc.faqs if svc else []) or [] %}{{ faqSection(pageFaqs, "Have questions?", "FAQs related to hiring a roof painter in Cairns", "background:var(--bg-soft)", false) }}
 
 {# ─── CTA ─── #}
 <section class="cta">

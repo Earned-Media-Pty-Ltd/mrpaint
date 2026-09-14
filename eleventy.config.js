@@ -47,6 +47,39 @@ module.exports = function (eleventyConfig) {
     (Array.isArray(list) ? list : []).find((it) => it && it[key] === value) || null
   );
 
+  // A heading, carrying the only two pieces of formatting this site's headings use.
+  //
+  // Every hero and section heading here is shaped like this:
+  //
+  //     <h1>Two-pack systems<br/>that <span class="high">hold up</span> to real work.</h1>
+  //
+  // The line break and the highlight are part of the writing, not decoration that can be
+  // dropped. But storing headings as HTML and printing them raw would mean anything that
+  // writes a heading can put arbitrary markup on the live site, and storing them as plain
+  // text throws the break and the highlight away.
+  //
+  // So a stored heading is TEXT with a two-token vocabulary, and nothing else:
+  //
+  //     a line break   ->  <br/>
+  //     [[phrase]]     ->  <span class="high">phrase</span>
+  //
+  // ⚠️ ESCAPE FIRST, THEN INJECT — the order is the whole safety argument. Everything is
+  // HTML-escaped before the two tokens become tags, so a stored "<script>" ends up as
+  // visible text and there is no input that produces any other element.
+  //
+  // ⚠️ CALL IT AS `{{ x | heading | safe }}`. The `safe` is not a shortcut: the escaping
+  // has already happened inside the filter, and without it Nunjucks would escape the <br/>
+  // and the span back into visible angle brackets. Never use `safe` here without `heading`.
+  eleventyConfig.addFilter("heading", (v) => {
+    if (v == null) return "";
+    const escaped = String(v).trim()
+      .replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;")
+      .replace(/"/g, "&quot;").replace(/'/g, "&#39;");
+    return escaped
+      .replace(/\[\[([\s\S]*?)\]\]/g, '<span class="high">$1</span>')
+      .replace(/\r?\n/g, "<br/>");
+  });
+
   return {
     dir: {
       input: ".",

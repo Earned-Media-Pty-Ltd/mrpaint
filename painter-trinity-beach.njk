@@ -5,7 +5,7 @@ description: Trade-qualified painters in Trinity Beach (4879). Exterior repaints
 permalink: /painter-trinity-beach/
 canonical: /painter-trinity-beach/
 ---
-
+{% from "faq-section.njk" import faqSection %}
 {# ─── HERO ─── #}
 <section class="hero">
   <div class="wrap">
@@ -290,21 +290,7 @@ canonical: /painter-trinity-beach/
   </div>
 </section>
 
-{# ─── FAQ ─── #}{% set place = locations | findBy("slug","trinity-beach") %}{% set pageFaqs = (place.faqs if place else []) or [] %}{% if pageFaqs | length %}
-<section class="faq-block">
-  <div class="wrap-narrow">
-    <div class="sec-head">
-      <span class="eyebrow">Common Questions</span>
-      <h2>Painting in Trinity Beach — FAQs</h2>
-    </div>
-    <div class="faq-list">{% for f in pageFaqs %}
-      <details{% if loop.first %} open{% endif %}>
-        <summary>{{ f.q }} <span class="plus">+</span></summary>
-        <div>{{ f.a }}</div>
-      </details>{% endfor %}
-    </div>
-  </div>
-</section>{% endif %}
+{# ─── FAQ ─── #}{% set place = locations | findBy("slug","trinity-beach") %}{% set pageFaqs = (place.faqs if place else []) or [] %}{{ faqSection(pageFaqs, "Common Questions", "Painting in Trinity Beach — FAQs") }}
 
 {# ─── SCHEMA: LocalBusiness with areaServed ─── #}
 <script type="application/ld+json">

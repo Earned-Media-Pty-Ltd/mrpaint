@@ -5,7 +5,7 @@ description: MrPaint is a local, family-run painting company, working in Cairns 
 permalink: /painter-cairns/
 canonical: /painter-cairns/
 ---
-
+{% from "faq-section.njk" import faqSection %}
 {# ─── HERO (double-eyebrow, image to right) ─── #}
 <section class="hero">
   <div class="wrap">
@@ -382,21 +382,7 @@ canonical: /painter-cairns/
   </div>
 </section>
 
-{# ─── FAQ ─── #}{% set place = locations | findBy("slug","cairns-cbd") %}{% set pageFaqs = (place.faqs if place else []) or [] %}{% if pageFaqs | length %}
-<section class="faq-block">
-  <div class="wrap-narrow">
-    <div class="sec-head">
-      <span class="eyebrow">Common Questions</span>
-      <h2>FAQs related to hiring a painter in Cairns</h2>
-    </div>
-    <div class="faq-list">{% for f in pageFaqs %}
-      <details{% if loop.first %} open{% endif %}>
-        <summary>{{ f.q }} <span class="plus">+</span></summary>
-        <div>{{ f.a }}</div>
-      </details>{% endfor %}
-    </div>
-  </div>
-</section>{% endif %}
+{# ─── FAQ ─── #}{% set place = locations | findBy("slug","cairns-cbd") %}{% set pageFaqs = (place.faqs if place else []) or [] %}{{ faqSection(pageFaqs, "Common Questions", "FAQs related to hiring a painter in Cairns") }}
 
 {# ─── CTA + LOCATION CHIPS ─── #}
 <section style="background: var(--bg-soft); padding: clamp(48px,6vw,80px) 0">

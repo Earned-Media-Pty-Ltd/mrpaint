@@ -1,0 +1,45 @@
+{#
+  The FAQ section, once.
+
+  It was written out four times — index.njk, painter-cairns.njk,
+  painter-trinity-beach.njk and roof-painter-cairns.njk — eleven identical lines of
+  markup in each, differing only in which list they read and two bits of wording.
+  Four copies of one component is four places to fix a bug in, and they had already
+  drifted: the roof page opens no question by default while the other three open the
+  first one.
+
+  ⚠️ THE EMPTY GUARD LIVES IN HERE ON PURPOSE. The heading sits outside the loop, so a
+  list with nothing in it used to render "Have questions?" above blank space. Keeping
+  the guard at the call sites meant repeating it four times and relying on whoever adds
+  the fifth page to remember. Now there is nothing to remember.
+
+  ⚠️ AND THE LEADING NEWLINE IS INSIDE THE GUARD, not outside it. A call site puts the
+  comment, the set and the call all on one line, so this macro owns every byte of its
+  own output: one newline then the section when there are questions, nothing at all
+  when there are none. Moving that newline shifts a blank line into the built page.
+
+  ⚠️ DO NOT WRITE A NUNJUCKS COMMENT TERMINATOR INSIDE THIS BLOCK. An earlier version of
+  these notes spelled out a call site including the closing brace of a comment, which
+  ended this comment three lines early and failed the whole build with "unexpected end
+  of comment" — pointing at index.njk, not at this file.
+
+  Usage, with the tokens spaced out so they cannot terminate this block:
+    {% from "faq-section.njk" import faqSection %}   at the top of the page
+    {{ faqSection(pageFaqs, "Have questions?", "FAQs related to …") }}
+    {{ faqSection(pageFaqs, "Have questions?", "…", "background:var(--bg-soft)", false) }}
+#}
+{% macro faqSection(items, eyebrow, heading, style="", openFirst=true) %}{% if items | length %}
+<section class="faq-block"{% if style %} style="{{ style }}"{% endif %}>
+  <div class="wrap-narrow">
+    <div class="sec-head">
+      <span class="eyebrow">{{ eyebrow }}</span>
+      <h2>{{ heading }}</h2>
+    </div>
+    <div class="faq-list">{% for f in items %}
+      <details{% if openFirst and loop.first %} open{% endif %}>
+        <summary>{{ f.q }} <span class="plus">+</span></summary>
+        <div>{{ f.a }}</div>
+      </details>{% endfor %}
+    </div>
+  </div>
+</section>{% endif %}{% endmacro %}
