@@ -48,14 +48,14 @@ canonical: /industrial-painting/
 .lm-tags{ display:flex; flex-wrap:wrap; gap: 8px; margin-top: 20px }
 .lm-tag{ font-family:var(--mono); font-size:11px; letter-spacing:.14em; text-transform:uppercase; padding:6px 12px; border-radius:999px; background:rgba(255,255,255,.08); color:rgba(255,255,255,.8); border:1px solid rgba(255,255,255,.18) }
 @media (max-width: 860px){ .lm-grid{ grid-template-columns: 1fr } }
-</style>
+</style>{% set svc = services | findBy("slug","industrial-painting") %}
 
 <section class="page-hero">
   <div class="wrap">
     <span class="eyebrow">Industrial painting · Cairns &amp; FNQ</span>
     <h1 style="margin-top:14px">Two-pack systems<br/>that <span class="high">hold up</span> to real work.</h1>
     <p class="lede" style="margin-top:24px;max-width:62ch">
-      Factory floors, warehouses, plant rooms, workshop roofs. Hot-galv primers, two-pack epoxies, line-marking and a crew that won't blink at heights.
+      {{ svc.intro }}
     </p>
     <div style="margin-top:28px;display:flex;gap:12px;flex-wrap:wrap">
       <a class="btn btn--yellow btn--lg" href="/contact-us/">Quote an industrial job <span class="arr">→</span></a>
@@ -89,58 +89,16 @@ canonical: /industrial-painting/
         <h2>Built for the kind of jobs<br/>most painters say no to.</h2>
       </div>
       <div class="right">
-        <p class="lede">Sectors and surfaces we cover. If you're not on this list, ring us anyway — we usually know someone who can.</p>
+        <p class="lede">{{ svc.blocks.specs_lede }}</p>
       </div>
     </div>
-    <div class="specs-grid">
+    <div class="specs-grid">{% for s in (svc.specs if svc else []) %}
       <div class="spec">
-        <span class="num">01 · Surface</span>
-        <h4>Steel &amp; structural</h4>
-        <p>Beams, columns, awnings, gantries. Rust converters, zinc primers, two-pack topcoats.</p>
-        <span class="tick">Hot-dip ready</span>
-      </div>
-      <div class="spec">
-        <span class="num">02 · Surface</span>
-        <h4>Concrete &amp; epoxy floors</h4>
-        <p>Warehouse, workshop, food-grade. Diamond grind, vapour-barrier prime, anti-slip and water-resistant epoxy systems.</p>
-        <span class="tick">Food-grade OK</span>
-      </div>
-      <div class="spec">
-        <span class="num">03 · Surface</span>
-        <h4>Factory &amp; shed roofs</h4>
-        <p>Colorbond, zincalume, asbestos-encapsulation. Thermal-reflective topcoats to cool the building.</p>
-        <span class="tick">Heat-reflective</span>
-      </div>
-      <div class="spec">
-        <span class="num">04 · Surface</span>
-        <h4>Tank &amp; vessel exterior</h4>
-        <p>Bulk storage, silos, fuel tanks. Inhibitor primers, UV-stable topcoats, full re-line on schedule.</p>
-        <span class="tick">UV stable</span>
-      </div>
-      <div class="spec">
-        <span class="num">05 · Service</span>
-        <h4>Line marking</h4>
-        <p>Carpark bays, warehouse aisles, safety zones. Crisp, hard-wearing acrylic and 2-pack lines.</p>
-        <span class="tick">AS-compliant</span>
-      </div>
-      <div class="spec">
-        <span class="num">06 · Service</span>
-        <h4>Mould &amp; corrosion</h4>
-        <p>Cyclone-zone environments don't forgive shortcuts. High-pressure water cleaning, lead paint removal, then we treat, prime, and topcoat to last.</p>
-        <span class="tick">Cyclone-zone</span>
-      </div>
-      <div class="spec">
-        <span class="num">07 · Service</span>
-        <h4>Heights &amp; access</h4>
-        <p>EWP, scaffold and ladder access — even the hard-to-reach areas, after hours, public holidays and weekends.</p>
-        <span class="tick">After hours &amp; weekends</span>
-      </div>
-      <div class="spec">
-        <span class="num">08 · Service</span>
-        <h4>Asbestos awareness</h4>
-        <p>Encapsulation systems for confirmed-low-risk roofs. We refer the rest to a licensed remover.</p>
-        <span class="tick">Encapsulation</span>
-      </div>
+        <span class="num">{{ s.num }}</span>
+        <h4>{{ s.title }}</h4>
+        <p>{{ s.body }}</p>
+        <span class="tick">{{ s.tick }}</span>
+      </div>{% endfor %}
     </div>
   </div>
 </section>
@@ -152,7 +110,7 @@ canonical: /industrial-painting/
         <span class="eyebrow">Coating systems</span>
         <h2 style="margin-top:14px">Specced for the substrate,<br/>not the salesperson.</h2>
         <p class="lede" style="margin-top:22px">
-          We pick the system based on what the steel, concrete or roof actually needs — UV, immersion, abrasion, cyclone. Industrial-grade products only, and we tell you the spec on the quote in writing.
+          {{ svc.blocks.specs_close }}
         </p>
         <ul class="brand-list">
           <li>Protective coatings</li>
@@ -176,7 +134,7 @@ canonical: /industrial-painting/
         <span class="eyebrow" style="color:rgba(255,255,255,.7)">Line marking</span>
         <h2 style="margin-top:14px">Bays, aisles &amp; safety lines<br/>that don't peel by Easter.</h2>
         <p class="lede" style="margin-top:22px;color:rgba(255,255,255,.82)">
-          Acrylic for carparks, 2-pack for warehouses, hot-melt for traffic surfaces. Safety colours and durable line marking that stand up to real traffic.
+          {{ svc.blocks.line_marking_lede }}
         </p>
         <div class="lm-tags">
           <span class="lm-tag">Carparks</span>
@@ -200,7 +158,7 @@ canonical: /industrial-painting/
       <div>
         <span class="eyebrow">Get an industrial quote</span>
         <h2>Site walk-through.<br/>Spec in writing. Then start.</h2>
-        <p class="lede">We don't quote industrial blind. Send us the basics and we'll come past, walk the site, take notes and come back with a proper spec.</p>
+        <p class="lede">{{ svc.blocks.cta_lede }}</p>
         <div class="contact-list">
           <div class="row"><span class="lbl">Phone</span><a href="{{ site.phone_link }}">{{ site.phone_display }}</a></div>
           <div class="row"><span class="lbl">Email</span><a href="mailto:{{ site.email }}">{{ site.email }}</a></div>
