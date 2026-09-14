@@ -5,7 +5,7 @@ description: Every painting service MrPaint offers in Cairns — residential, co
 permalink: /services/
 canonical: /services/
 ---
-{% from "cta-section.njk" import ctaSection with context %}{% from "page-hero.njk" import pageHero %}
+{% from "page-hero.njk" import pageHero %}
 <style>
 .page-hero{ padding: clamp(48px,7vw,90px) 0 clamp(28px,4vw,56px); position:relative; overflow:hidden }
 .page-hero::before{ content:""; position:absolute; right:-160px; top:-100px; width:480px; height:480px; border-radius:50%; background:var(--yellow); opacity:.5; z-index:0 }
@@ -168,5 +168,19 @@ canonical: /services/
 </section>
 
 {# ─── CTA ─── #}
-{{ ctaSection("Free, no-obligation", "Not sure which service
-you need? Just ask.", ["Tell us what you're looking at and we'll point you the right way — information over the phone, or a written quote on site. Either works for us."], "Get a free quote") }}
+<section class="cta">
+  <div class="wrap">
+    <div class="grid">
+      <div>
+        <span class="eyebrow">Free, no-obligation</span>
+        <h2>Not sure which service<br/>you need? Just ask.</h2>
+        <p class="lede">Tell us what you're looking at and we'll point you the right way — information over the phone, or a written quote on site. Either works for us.</p>
+        <div class="contact-list">
+          <div class="row"><span class="lbl">Phone</span><a href="{{ site.phone_link }}">{{ site.phone_display }}</a></div>
+          <div class="row"><span class="lbl">Email</span><a href="mailto:{{ site.email }}">{{ site.email }}</a></div>
+        </div>
+        <div style="margin-top:28px"><a class="btn btn--yellow btn--lg" href="/contact-us/">Get a free quote <span class="arr">→</span></a></div>
+      </div>
+    </div>
+  </div>
+</section>
