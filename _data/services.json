@@ -74,5 +74,33 @@
         "a": "Yes. We're set up for 2-pac finishes and solvent-borne protective coatings where the job requires it."
       }
     ]
+  },
+  {
+    "slug": "roof-painter-cairns",
+    "url_alias": "/roof-painter-cairns/",
+    "title": "Roof Painting",
+    "nav_title": "Roof",
+    "h1": "Roof Painter Cairns & Surrounds",
+    "summary": "MrPaint is a local roof painting, family-run company servicing Cairns. Terracotta, concrete and metal roofs, gutters and downpipes. Get in touch with our friendly team.",
+    "intro": "Looking for a painting company in Cairns that offers affordable roof painting services? Our team of experienced professionals are experts in painting roofs and will work diligently to ensure your project is completed to the highest standards.",
+    "sections": [],
+    "faqs": [
+      {
+        "q": "Do you handle insurance jobs?",
+        "a": "Yes — water damage, smoke damage, vandalism or an unavoidable accident can all be handled with a high degree of expertise."
+      },
+      {
+        "q": "What types of painting do you do?",
+        "a": "Roof, interior, commercial, residential, external or any other painting."
+      },
+      {
+        "q": "Does a fresh coat of paint improve the value of my home?",
+        "a": "Creating a fresh new look for your property can increase its curb appeal and value if you are looking to sell. A neutral interior paint can make your property more appealing to a wider range of buyers, while a new exterior look can refresh your whole home. Painting both internally and externally has a great return on investment if you are selling. Keeping the roof clean can also help to improve the value of your home."
+      },
+      {
+        "q": "Can you help with lead paint removal?",
+        "a": "Yes — our experienced team can handle lead paint removal and then re-paint with your choice of colours in a more health and environmentally friendly paint choice."
+      }
+    ]
   }
 ]

@@ -389,43 +389,11 @@ canonical: /painter-cairns/
       <span class="eyebrow">Common Questions</span>
       <h2>FAQs related to hiring a painter in Cairns</h2>
     </div>
-    <div class="faq-list">
-      <details open>
-        <summary>I'm looking for a painter in Cairns — do I need to have it painted more frequently because it's near the beach? <span class="plus">+</span></summary>
-        <div>As long as you use quality paint and have experienced exterior painters doing the paint job, it should still last around 15 years. Salt air and UV are the two big enemies, but a good system applied over proper prep handles them. Contact us for an assessment and a timeframe.</div>
-      </details>
-      <details>
-        <summary>How can I check if a painter has the right qualifications and experience? <span class="plus">+</span></summary>
-        <div>Most painters include the details of their qualifications and experience on their websites. Ask the painting company when you call for a quote if they are licensed.</div>
-      </details>
-      <details>
-        <summary>How can I find out about the quality of a house painter's work? <span class="plus">+</span></summary>
-        <div>A professional painter usually includes testimonials on their website from previous clients. Reading these — and the unprompted Google reviews — gives you a reasonable indication of the service quality on offer.</div>
-      </details>
-      <details>
-        <summary>Do I need to prepare the area I want to have painted? <span class="plus">+</span></summary>
-        <div>Generally, no. A professional painter will offer you a quote that includes preparation. Move what's precious, and we'll move the rest.</div>
-      </details>
-      <details>
-        <summary>My handyman says he can paint my house for me — why hire a painter? <span class="plus">+</span></summary>
-        <div>A licensed painter is a professional tradesman capable of completing jobs to a high standard. A handyman is generally a jack of all trades who may have varying skills and experience. The repaint to fix a bad paint job nearly always costs more than doing it properly the first time.</div>
-      </details>
-      <details>
-        <summary>What's the difference between a commercial painter and a house painter? <span class="plus">+</span></summary>
-        <div>Both types of painters are licensed. Commercial painters usually do larger jobs for commercial buildings, while house painters stick to residential work. We do both.</div>
-      </details>
-      <details>
-        <summary>Can I hire the same painter to do exterior painting and paint inside my house? <span class="plus">+</span></summary>
-        <div>Yes you can. Painting a whole house, inside and out, is a large job — but an experienced painter can do it well within a reasonable time frame.</div>
-      </details>
-      <details>
-        <summary>Why does quality paint cost so much? <span class="plus">+</span></summary>
-        <div>Contemporary paints have a lot of science behind them. Many are formulated for specific uses. High-quality paint correctly chosen for the situation is more likely to last — and save you money in the long run.</div>
-      </details>
-      <details>
-        <summary>Is it a good idea to get a few quotes for a painting job? <span class="plus">+</span></summary>
-        <div>You should always know the going rate for good painting work in your area. Make sure you ask about qualifications and experience too — cheapest does not always equate to the 'best'.</div>
-      </details>
+    <div class="faq-list">{% set place = locations | findBy("slug","cairns-cbd") %}{% for f in (place.faqs if place else []) %}
+      <details{% if loop.first %} open{% endif %}>
+        <summary>{{ f.q }} <span class="plus">+</span></summary>
+        <div>{{ f.a }}</div>
+      </details>{% endfor %}
     </div>
   </div>
 </section>

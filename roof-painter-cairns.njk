@@ -197,23 +197,11 @@ canonical: /roof-painter-cairns/
       <span class="eyebrow">Have questions?</span>
       <h2>FAQs related to hiring a roof painter in Cairns</h2>
     </div>
-    <div class="faq-list">
+    <div class="faq-list">{% set svc = services | findBy("slug","roof-painter-cairns") %}{% for f in (svc.faqs if svc else []) %}
       <details>
-        <summary>Do you handle insurance jobs? <span class="plus">+</span></summary>
-        <div>Yes — water damage, smoke damage, vandalism or an unavoidable accident can all be handled with a high degree of expertise.</div>
-      </details>
-      <details>
-        <summary>What types of painting do you do? <span class="plus">+</span></summary>
-        <div>Roof, interior, commercial, residential, external or any other painting.</div>
-      </details>
-      <details>
-        <summary>Does a fresh coat of paint improve the value of my home? <span class="plus">+</span></summary>
-        <div>Creating a fresh new look for your property can increase its curb appeal and value if you are looking to sell. A neutral interior paint can make your property more appealing to a wider range of buyers, while a new exterior look can refresh your whole home. Painting both internally and externally has a great return on investment if you are selling. Keeping the roof clean can also help to improve the value of your home.</div>
-      </details>
-      <details>
-        <summary>Can you help with lead paint removal? <span class="plus">+</span></summary>
-        <div>Yes — our experienced team can handle lead paint removal and then re-paint with your choice of colours in a more health and environmentally friendly paint choice.</div>
-      </details>
+        <summary>{{ f.q }} <span class="plus">+</span></summary>
+        <div>{{ f.a }}</div>
+      </details>{% endfor %}
     </div>
   </div>
 </section>

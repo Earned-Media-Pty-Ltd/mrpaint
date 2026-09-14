@@ -297,31 +297,11 @@ canonical: /painter-trinity-beach/
       <span class="eyebrow">Common Questions</span>
       <h2>Painting in Trinity Beach — FAQs</h2>
     </div>
-    <div class="faq-list">
-      <details open>
-        <summary>How often should I repaint my Trinity Beach exterior? <span class="plus">+</span></summary>
-        <div>Most Trinity Beach exteriors need a proper repaint every 5 to 7 years. Salt mist and wet-season humidity break down cheaper coatings faster than inland. If you're still on builder's-grade paint from when the place was built, you'll be due now.</div>
-      </details>
-      <details>
-        <summary>What's the best exterior paint for a coastal Cairns home? <span class="plus">+</span></summary>
-        <div>We use Dulux Weathershield and Solver Aquashield on render and masonry — both are formulated for tropical coastal conditions. For timber (eaves, fascia, decks) we go with Sikkens. The paint matters but the prep matters more — even the best system fails over a bad surface.</div>
-      </details>
-      <details>
-        <summary>Do you do interior repaints in Trinity Beach too? <span class="plus">+</span></summary>
-        <div>Yep. Full interiors, single rooms, or just a refresh on the high-traffic areas. We mask off, fill, sand, prime, and finish — your floors and furniture stay clean. Most three-bed interiors take 5–8 days depending on prep.</div>
-      </details>
-      <details>
-        <summary>Are you fully insured and licensed? <span class="plus">+</span></summary>
-        <div>Yes — fully insured, licensed, and trade-qualified. Happy to share licence details on the quote.</div>
-      </details>
-      <details>
-        <summary>Do you charge for quotes? <span class="plus">+</span></summary>
-        <div>No. The site visit and quote are both free, and the quoted price is fixed — what we write down is what you pay.</div>
-      </details>
-      <details>
-        <summary>When can you start? <span class="plus">+</span></summary>
-        <div>Depends on the size of the job and what's already booked. Usually 1–3 weeks for an exterior repaint, faster for small interior jobs. Call Adrian on {{ site.phone_display }} and he'll walk you through availability.</div>
-      </details>
+    <div class="faq-list">{% set place = locations | findBy("slug","trinity-beach") %}{% for f in (place.faqs if place else []) %}
+      <details{% if loop.first %} open{% endif %}>
+        <summary>{{ f.q }} <span class="plus">+</span></summary>
+        <div>{{ f.a }}</div>
+      </details>{% endfor %}
     </div>
   </div>
 </section>

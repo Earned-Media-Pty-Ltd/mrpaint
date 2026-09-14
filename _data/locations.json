@@ -6,10 +6,48 @@
     "publish": true,
     "postcode": "4870",
     "lat": -16.9203,
-    "lng": 145.7710,
+    "lng": 145.771,
     "intro": "Cairns CBD is a mix of heritage Queenslanders, 70s and 80s walk-ups, and newer apartments — most needing regular repaints to cope with the salt air and the sun. We do a lot of unit blocks, share-house exteriors, and rental turnaround work in the city. Quick quotes, neat work, no mess left behind.",
     "common_jobs": "Exterior repaints on weatherboard homes, hallway and stairwell work in unit blocks, end-of-lease rental refreshes, balcony repaints.",
-    "recent_jobs": []
+    "recent_jobs": [],
+    "faqs": [
+      {
+        "q": "I'm looking for a painter in Cairns — do I need to have it painted more frequently because it's near the beach?",
+        "a": "As long as you use quality paint and have experienced exterior painters doing the paint job, it should still last around 15 years. Salt air and UV are the two big enemies, but a good system applied over proper prep handles them. Contact us for an assessment and a timeframe."
+      },
+      {
+        "q": "How can I check if a painter has the right qualifications and experience?",
+        "a": "Most painters include the details of their qualifications and experience on their websites. Ask the painting company when you call for a quote if they are licensed."
+      },
+      {
+        "q": "How can I find out about the quality of a house painter's work?",
+        "a": "A professional painter usually includes testimonials on their website from previous clients. Reading these — and the unprompted Google reviews — gives you a reasonable indication of the service quality on offer."
+      },
+      {
+        "q": "Do I need to prepare the area I want to have painted?",
+        "a": "Generally, no. A professional painter will offer you a quote that includes preparation. Move what's precious, and we'll move the rest."
+      },
+      {
+        "q": "My handyman says he can paint my house for me — why hire a painter?",
+        "a": "A licensed painter is a professional tradesman capable of completing jobs to a high standard. A handyman is generally a jack of all trades who may have varying skills and experience. The repaint to fix a bad paint job nearly always costs more than doing it properly the first time."
+      },
+      {
+        "q": "What's the difference between a commercial painter and a house painter?",
+        "a": "Both types of painters are licensed. Commercial painters usually do larger jobs for commercial buildings, while house painters stick to residential work. We do both."
+      },
+      {
+        "q": "Can I hire the same painter to do exterior painting and paint inside my house?",
+        "a": "Yes you can. Painting a whole house, inside and out, is a large job — but an experienced painter can do it well within a reasonable time frame."
+      },
+      {
+        "q": "Why does quality paint cost so much?",
+        "a": "Contemporary paints have a lot of science behind them. Many are formulated for specific uses. High-quality paint correctly chosen for the situation is more likely to last — and save you money in the long run."
+      },
+      {
+        "q": "Is it a good idea to get a few quotes for a painting job?",
+        "a": "You should always know the going rate for good painting work in your area. Make sure you ask about qualifications and experience too — cheapest does not always equate to the 'best'."
+      }
+    ]
   },
   {
     "name": "Trinity Beach",
@@ -18,10 +56,36 @@
     "publish": true,
     "postcode": "4879",
     "lat": -16.7833,
-    "lng": 145.7000,
+    "lng": 145.7,
     "intro": "Trinity Beach is one of our regular patches — mostly 90s and 2000s homes, plenty of rendered brick, and exteriors that take a hammering from the salt and the wet season. Most houses up here need a full exterior repaint every 5 to 7 years to keep the seal tight and stop the timber going soft. We do a lot of repaints and trim work in Trinity Beach.",
     "common_jobs": "Full exterior repaints, soffit and eave touch-ups, fence and timber refresh, pool-house repaints.",
-    "recent_jobs": []
+    "recent_jobs": [],
+    "faqs": [
+      {
+        "q": "How often should I repaint my Trinity Beach exterior?",
+        "a": "Most Trinity Beach exteriors need a proper repaint every 5 to 7 years. Salt mist and wet-season humidity break down cheaper coatings faster than inland. If you're still on builder's-grade paint from when the place was built, you'll be due now."
+      },
+      {
+        "q": "What's the best exterior paint for a coastal Cairns home?",
+        "a": "We use Dulux Weathershield and Solver Aquashield on render and masonry — both are formulated for tropical coastal conditions. For timber (eaves, fascia, decks) we go with Sikkens. The paint matters but the prep matters more — even the best system fails over a bad surface."
+      },
+      {
+        "q": "Do you do interior repaints in Trinity Beach too?",
+        "a": "Yep. Full interiors, single rooms, or just a refresh on the high-traffic areas. We mask off, fill, sand, prime, and finish — your floors and furniture stay clean. Most three-bed interiors take 5–8 days depending on prep."
+      },
+      {
+        "q": "Are you fully insured and licensed?",
+        "a": "Yes — fully insured, licensed, and trade-qualified. Happy to share licence details on the quote."
+      },
+      {
+        "q": "Do you charge for quotes?",
+        "a": "No. The site visit and quote are both free, and the quoted price is fixed — what we write down is what you pay."
+      },
+      {
+        "q": "When can you start?",
+        "a": "Depends on the size of the job and what's already booked. Usually 1–3 weeks for an exterior repaint, faster for small interior jobs. Call Adrian on 0478 659 766 and he'll walk you through availability."
+      }
+    ]
   },
   {
     "name": "Palm Cove",
@@ -42,7 +106,7 @@
     "publish": true,
     "postcode": "4870",
     "lat": -16.9047,
-    "lng": 145.7500,
+    "lng": 145.75,
     "intro": "Edge Hill is character country — older Queenslanders, lots of timber, period detail that needs to be respected. We do a lot of period-correct colour work in Edge Hill, plus the usual exterior repaints on the older weatherboard homes. If you've got a heritage place that needs a careful hand, we know what we're doing.",
     "common_jobs": "Period-correct exterior repaints on Queenslanders, sash and trim work, internal heritage colour schemes, soffit and bargeboard restoration.",
     "recent_jobs": []

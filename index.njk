@@ -264,47 +264,11 @@ canonical: /
       <span class="eyebrow">Have questions?</span>
       <h2>FAQs related to hiring a painter in Cairns</h2>
     </div>
-    <div class="faq-list">
-      <details open>
-        <summary>Is it possible to contract a house painter to work in my absence at my Cairns holiday house? <span class="plus">+</span></summary>
-        <div>Yes. You need a company like MrPaint — highly recommended, with a reputation for quality workmanship and dependability so you can leave them to it. It's still a good idea to have a friend check on the work periodically.</div>
-      </details>
-      <details>
-        <summary>Will a Cairns painter travel out of their local area to my place? <span class="plus">+</span></summary>
-        <div>Most professional painters of long standing build a customer base local to them. MrPaint can and does travel outside the immediate Cairns area for the right job — give us a call and we'll let you know.</div>
-      </details>
-      <details>
-        <summary>Can acrylic paint be used for exterior surfaces? <span class="plus">+</span></summary>
-        <div>Some water-based acrylic paints are formulated for exterior use. One of our experienced painters can advise on the most appropriate paint for your specific outside paint jobs.</div>
-      </details>
-      <details>
-        <summary>Can my house be painted during winter? <span class="plus">+</span></summary>
-        <div>Possibly. Paint takes longer to dry when the weather is cold and damp, and rain can pose a challenge for exterior painters. In Cairns winters this is less of a problem than in southern climates.</div>
-      </details>
-      <details>
-        <summary>How long will it take for the exterior paint on my house to dry? <span class="plus">+</span></summary>
-        <div>Most modern quality paints are touch-dry within a few hours, but can take up to a month to fully cure. It's one reason why many house painters prefer to avoid exterior paint jobs in winter.</div>
-      </details>
-      <details>
-        <summary>I just bought a weatherboard house — how often should the outside be painted? <span class="plus">+</span></summary>
-        <div>If you use a professional painter and quality paint formulated for exterior work, it should last around 15 years. If you're unsure when it was last painted, one of our experienced painters can assess it for you.</div>
-      </details>
-      <details>
-        <summary>I'm repainting my house then selling — should I go with a dramatic colour scheme? <span class="plus">+</span></summary>
-        <div>It's advisable to stick to neutrals when you do residential painting pre-sale. Feature walls and bright colours can be off-putting for buyers, so ask us about neutral palettes that match the area you're in.</div>
-      </details>
-      <details>
-        <summary>Can I buy the paint for my house painter? <span class="plus">+</span></summary>
-        <div>Yes — but bear in mind that a licensed painter can buy at wholesale rates, so there are potential savings to be had if the painter does the paint purchasing.</div>
-      </details>
-      <details>
-        <summary>Is it worth painting my house before I put it on the market? <span class="plus">+</span></summary>
-        <div>Yes, it can potentially add value to your property. A fresh, clean property doesn't immediately require any work — and offers buyers a quality first impression.</div>
-      </details>
-      <details>
-        <summary>What should I look for when I'm choosing a house painter? <span class="plus">+</span></summary>
-        <div>When you're hiring a professional painter, look for the following: a professional will be punctual when they come to do your quote, and the quote will be detailed — showing services including a timeframe, materials and staffing. They will also be happy to give you references from previous paint jobs.</div>
-      </details>
+    <div class="faq-list">{% for f in faq %}
+      <details{% if loop.first %} open{% endif %}>
+        <summary>{{ f.q }} <span class="plus">+</span></summary>
+        <div>{{ f.a }}</div>
+      </details>{% endfor %}
     </div>
   </div>
 </section>

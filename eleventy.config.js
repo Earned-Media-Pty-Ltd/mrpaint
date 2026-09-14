@@ -33,6 +33,20 @@ module.exports = function (eleventyConfig) {
     return /[.!?]$/.test(text) ? text : `${text}.`;
   });
 
+  // One entry out of a data file, matched on a key — e.g. the Cairns CBD row of
+  // locations.json, so a hand-written page can read its own FAQs.
+  //
+  // ⚠️ NUNJUCKS' OWN `selectattr` DOES NOT FILTER IN THIS BUILD. Checked before writing
+  // this: `locations | selectattr("slug","equalto","cairns-cbd")` returns the whole list,
+  // so `| first` silently yields the FIRST suburb rather than the matching one. It fails
+  // by showing the wrong data, not by erroring, which is the worst way to fail.
+  //
+  // Returns null rather than undefined when nothing matches, so `{% if %}` reads clearly
+  // and `.faqs` on the result cannot throw mid-build.
+  eleventyConfig.addFilter("findBy", (list, key, value) =>
+    (Array.isArray(list) ? list : []).find((it) => it && it[key] === value) || null
+  );
+
   return {
     dir: {
       input: ".",
