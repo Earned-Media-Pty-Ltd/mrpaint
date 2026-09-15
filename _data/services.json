@@ -10,7 +10,148 @@
     "trust_line": "After-hours and weekend work standard.",
     "sections": [],
     "faqs": [],
-    "hero_eyebrow": "Commercial painting · Cairns"
+    "hero_eyebrow": "Commercial painting · Cairns",
+    "blocks": {
+      "our_corporate_partnership__h": "Our corporate partnership service is what your business is looking for.",
+      "who_we_paint_for_h": "Who we paint for.",
+      "corporate_painting_project_h": "Corporate painting projects, fit-outs and strata projects.",
+      "a_proper_commercialscope_e_h": "A proper commercial\nscope, every time.",
+      "have_hard_to_reach_areas_l_h": "Have hard-to-reach areas?\nLet MrPaint do the hard yakka for you!",
+      "thinking_of_an_exteriormak_h": "Thinking of an exterior\nmakeover of your property?",
+      "mrpaint_are_experts_in_eve_h": "MrPaint are experts in even the most delicate of painting situations.",
+      "mrpaint_provide_competitiv_h": "MrPaint provide competitive pricing on commercial paint jobs.",
+      "we_paint_while_yourbusines_h": "We paint while your\nbusiness sleeps.",
+      "our_quality_painting_servi_h": "Our quality painting service\nis just a call away.",
+      "types": [
+        {
+          "title": "Shopfronts & retail",
+          "body": "Front-of-house refresh, after-hours work to keep trading. We paint over the weekend, you open Monday."
+        },
+        {
+          "title": "Offices & co-working",
+          "body": "Walls, partitions, kitchens, breakouts. Low-VOC products so your team can use the space the next day."
+        },
+        {
+          "title": "Strata & body corp",
+          "body": "Scope packs, before/after photos, line-item quotes. Tidy hand-overs for committees who care about it."
+        },
+        {
+          "title": "Hospitality & venues",
+          "body": "Cafés, restaurants, pubs, hotels. Heritage finishes when needed, hard-wearing systems when not."
+        },
+        {
+          "title": "Childcare & education",
+          "body": "Sensitive-substrate-aware products for ages 0–5. School holidays scheduling. Site-induction ready."
+        },
+        {
+          "title": "Property management",
+          "body": "Between-tenant repaints, scope-to-invoice within the week, photos uploaded straight to your PM software."
+        }
+      ],
+      "list_1": [
+        "Colour consultations for commercial painting projects",
+        "Exterior home painting for strata buildings and rental properties",
+        "Roof painting",
+        "General maintenance painting"
+      ],
+      "list_2": [
+        "Site walk-through & measure-up",
+        "Substrate & prep assessment",
+        "Brand & product selection",
+        "Number of coats specified",
+        "Colour consultation",
+        "Before/after photo pack",
+        "Licence details on the quote",
+        "Public liability insurance details",
+        "Site protection & drop-sheeting",
+        "End-of-day clean-up",
+        "Final walk-through & touch-ups",
+        "Satisfaction guarantee"
+      ],
+      "list_3": [
+        "A quality painting finish",
+        "Special effects",
+        "Interior and exterior painting",
+        "Colour consultation — including recommendations for a commercial space to feel larger, or to create a certain warm, friendly vibe",
+        "Residential painting",
+        "Recommendations for interior paints",
+        "Pressure cleaning",
+        "Roof painting",
+        "Industrial painting",
+        "Strata painting",
+        "Commercial property painting",
+        "Spray paint"
+      ],
+      "list_4": [
+        "Evening & weekend shifts",
+        "Public-holiday shutdowns",
+        "Low-VOC products for next-day use",
+        "Site protection that handles foot traffic"
+      ],
+      "our_corporate_partnership__p1": [
+        "Whether you are looking for a painting company to provide a full makeover or some basic touch-up painting, MrPaint is your one-stop painting services solution for all your house and commercial painting needs."
+      ],
+      "our_corporate_partnership__p2": [
+        "Working across Cairns, MrPaint has worked on anything and everything from commercial developments, strata painting, new builds, renovations and restorations to fixing up DIY house painting projects — you name it, our team are ready to tackle it.",
+        "One of the most trusted names in the business when it comes to painting and decorating in Cairns, MrPaint has built a reputation on bringing the highest quality workmanship. Our commercial painting service in Cairns uses superior paint products as well as being highly recommended by everyone from commercial, to residential, strata, shop-front and more."
+      ],
+      "our_corporate_partnership__p3": [
+        "Our painters can handle a variety of tasks including:"
+      ],
+      "who_we_paint_for_p1": [
+        "From a single café fit-out to a 14-unit strata block. We've done a bit of everything in Cairns, and we'll happily quote whatever you're sitting on."
+      ],
+      "corporate_painting_project_p1": [
+        "Let us create a stylish space that you'll love going to each day."
+      ],
+      "corporate_painting_project_p2": [
+        "Our team of dedicated, licensed and expert painters understand the importance of the right painting products — and no matter if you've painted the interior, painted the exterior or both, we ensure that the building paintwork is of the highest standards.",
+        "Our team works with your style, your property's characteristics, as well as the current situation of the commercial building — such as near a motorway, heavy industrial, care facilities (aged care), epoxy floor coatings, shopping centres, near the ocean, in direct sun and more. Using the latest painting techniques, our expert team can pick the colours, shades, styles and paints to suit your office painting needs.",
+        "Rest assured, our team of Cairns-based commercial painters maintain your commercial properties and offices, rather than using dozens of contractors."
+      ],
+      "a_proper_commercialscope_e_p1": [
+        "Our commercial quotes spell out every line so the comparison with the other painters you're calling is apples to apples."
+      ],
+      "have_hard_to_reach_areas_l_p1": [
+        "MrPaint is one of Cairns' premier internal and external painting service professionals, offering services such as pressure cleaning, painting, decorating and more to ensure that your shop, office, building or factory reflects the look and aesthetics you desire.",
+        "When it comes to strata or commercial painting, many contractors can take advantage of clients and offer poor service and inflated prices. At MrPaint, we're dedicated to a long-term partnership with our clients and offer a satisfaction guarantee, an expert project manager, obligation-free quotes and attention to detail that has to be seen to be believed.",
+        "So, next time a painting project on your Cairns property comes up, speak to MrPaint first, and let our team of professionals provide you with an alternative quote — to ensure you are getting the best value for money. Our costs will always vary depending on the size and scope of the project. In general, our rates are reasonably priced.",
+        "We understand that painting can be a big investment. That's why we work hard to ensure that all of our customers are completely satisfied with our work. We know that you will be happy."
+      ],
+      "have_hard_to_reach_areas_l_p2": [
+        "Our painting services include the following:"
+      ],
+      "thinking_of_an_exteriormak_p1": [
+        "It is said that you should 'never judge a book by its cover' — however, there is no question when looking at a building to lease or to potentially purchase, what it looks like inside and out truly matters.",
+        "Nothing adds value and beauty in the eyes of a potential buyer like a new coat of paint. Transforming the outdated brick or wooden façade — or perhaps the ghastly paint job of the late 80's — with a professional, expert commercial paint team could mean the difference between you selling your property for top dollar, or potentially being taken advantage of before you sell.",
+        "We'll do a fantastic job for your commercial painting project. We also recommend that you get painting quotes to compare price and quality."
+      ],
+      "mrpaint_are_experts_in_eve_p1": [
+        "Some of MrPaint's most satisfied and repeat clients are those with sensitivities that must be managed to the finite degree."
+      ],
+      "mrpaint_are_experts_in_eve_p2": [
+        "Childcare centres, and properties where individuals with sensitivities must have the utmost care and due diligence when painting — MrPaint is the company for the job! From the exterior painting, through to the interior, sealing of wooden structures and even reviewing epoxy flooring, MrPaint is the licensed and qualified experts ensuring the childcare centres we attend are risk-free when it comes to their choice of paint and décor.",
+        "With an understanding of the paint selections and colour palettes that complement each age group and demographic in pre-school aged children, our painting process is focused on promoting healthy, active, rested kids. Quite simply — why would you, as a centre owner or director, risk the safety of the little ones in your care with anyone else?",
+        "Get in touch with a local painter from our Cairns-wide painting team today."
+      ],
+      "mrpaint_provide_competitiv_p1": [
+        "MrPaint proudly works with our extensive client list to ensure they are getting the best value for money — and that their needs are not only being met, but exceeded."
+      ],
+      "mrpaint_provide_competitiv_p2": [
+        "Should you be looking to redecorate, repaint or start a new commercial, industrial, shop-front or even large residential painting project, why not have one of our team of professionals out? Obtaining a second quote is not only good business but could save you time, money and hassle in having to have the MrPaint team come back onto your property and fix a job that hasn't been done correctly in the first place.",
+        "When looking to get your next office, shop, commercial or industrial painting done in and around the Cairns area, speak to the team of painting contractors that has created some of the most memorable destinations in our great city. MrPaint can provide you and your business with peace of mind, and a superior finish, every time.",
+        "Call us today to schedule a free consultation! We look forward to hearing from you."
+      ],
+      "we_paint_while_yourbusines_p1": [
+        "We get it — time is money. Our crew is comfortable working evenings, weekends and shutdowns to keep your customers walking in the front door uninterrupted."
+      ],
+      "our_quality_painting_servi_p1": [
+        "Free, on-site and obligation-free. We'll come past, walk it with you and send a proper line-item, obligation-free quote."
+      ],
+      "our_quality_painting_servi_p2": [
+        "Better still — call us. But this works too."
+      ]
+    }
   },
   {
     "slug": "industrial-painting",
